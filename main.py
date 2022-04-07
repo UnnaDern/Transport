@@ -23,12 +23,7 @@ F1.close()
 F1=open("students.dat","rb")
 A=pickle.load(F1)
 while True:
-    print('Введите необходимое число')
-    print('1 - сортировка по станции назначения')
-    print('2 - станция назначения,согласно времени отправления')
-    print('3 - редактировование записи в БД')
     print('4 - печать БД')
-    print('5 - выход из БД')
     n=int(input())
     if n == 4:
         for i in range(len(r)):

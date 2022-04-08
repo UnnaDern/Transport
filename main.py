@@ -30,6 +30,7 @@ while True:
     print('3 - редактировование записи в БД')
     print('4 - печать БД')
     print('5 - выход из БД')
+    print("6 - Сортировка по пометкам")
     n=int(input())
     if n == 4:
         for i in range(len(r)):
@@ -87,6 +88,16 @@ while True:
                 a.pometka = re[1]
                 a.vremya = list(map(int, re[2].split(':')))
                 r.append(a)
+    if n==6:
+        r2 = sorted(r, key=lambda x: x.pometka)
+        for i in range(len(r)):
+            d1 = r2[i].vremya[0]
+            d2 = r2[i].vremya[1]
+            if str(d2) == '0':
+                print(r2[i].punkt, r2[i].pometka, str(d1) + ':' + str(d2) + '0')
+            else:
+                print(r2[i].punkt, r2[i].pometka, str(d1) + ':' + str(d2))
+
     elif n == 5:
         F1 = open(f"{name}.dat", "wb")
         pickle.dump(r, F1)

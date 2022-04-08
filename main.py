@@ -17,10 +17,11 @@ while True:
     rasp.vremya = list(map(int, x[2].split(':')))
     r.append(rasp)
 
-F1=open("students.dat","wb")
+name = input('Введите название файла')
+F1=open(f"{name}.dat","wb")
 pickle.dump(r,F1)
 F1.close()
-F1=open("students.dat","rb")
+F1=open(f"{name}.dat","rb")
 A=pickle.load(F1)
 while True:
     print('Введите необходимое число')
@@ -54,6 +55,7 @@ while True:
         p2 = p[1]
         k=0
         for i in range(len(r)):
+            #print(r[i].vremya[0],p1,r[i].vremya[1],p2)
             if r[i].vremya[0] == int(p1) and r[i].vremya[1] == int(p2):
                 k += 1
                 d1 = r[i].vremya[0]
@@ -63,10 +65,10 @@ while True:
                 else:
                     print(r[i].punkt, r[i].pometka, str(d1) + ':' + str(d2))
 
-            elif k==0:
+        else:
+            if k==0:
                 print("Такой электрички нет")
                 print("--------***--------")
-                break
 
     if n == 3:
         print("Чтобы начать редактировать список введите 'Lets' или нажмите Enter")
@@ -86,6 +88,9 @@ while True:
                 a.vremya = list(map(int, re[2].split(':')))
                 r.append(a)
     elif n == 5:
+        F1 = open(f"{name}.dat", "wb")
+        pickle.dump(r, F1)
+        F1.close()
         exit()
 
 

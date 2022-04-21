@@ -33,7 +33,7 @@ while True:
                 print(r[i].punkt,r[i].pometka,str(d1) + ':'+ str(d2)+'0')
             else:
                 print(r[i].punkt, r[i].pometka, str(d1) + ':' + str(d2))
-    
 
+print("-")
 
 

@@ -90,7 +90,7 @@ while True:
                 a.vremya = list(map(int, re[2].split(':')))
                 r.append(a)
     if n==6:
-        r2 = sorted(r, key=lambda x: x.pometka)
+        r2 = sorted(r, key=lambda x: x.vremya)
         for i in range(len(r)):
             d1 = r2[i].vremya[0]
             d2 = r2[i].vremya[1]

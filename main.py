@@ -59,7 +59,7 @@ while True:
         k=0
         for i in range(len(r)):
             #print(r[i].vremya[0],p1,r[i].vremya[1],p2)
-            if r[i].vremya[0] == int(p1) and r[i].vremya[1] == int(p2):
+            if r[i].vremya[0] >= int(p1) and r[i].vremya[1] >= int(p2):
                 k += 1
                 d1 = r[i].vremya[0]
                 d2 = r[i].vremya[1]

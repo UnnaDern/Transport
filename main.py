@@ -31,6 +31,7 @@ while True:
     print('4 - печать БД')
     print('5 - выход из БД')
     print("6 - Сортировка по пометкам")
+    print("7 - Редактировать строку")
     n=int(input())
     if n == 4:
         for i in range(len(r)):
@@ -104,6 +105,41 @@ while True:
         pickle.dump(r, F1)
         F1.close()
         exit()
+    if n == 7:
+        print("Введите строку которую хотите отредактировать ")
+        t=input().split(' ',3)
+        er1=t[0]
+        er2=t[1]
+        er3=t[2].split(':')
+        er4=er3[0]
+        er5=er3[1]
+        for i in range(len(r)):
+            d1 = r[i].vremya[0]
+            d2 = r[i].vremya[1]
+            #print(er1,r[i].punkt,er2,r[i].pometka,d1,er4,d2,er5)
+
+            if er1==r[i].punkt and er2==r[i].pometka and str(d1)==str(er4) and str(d2)==str(er5):
+                k=i
+
+                print("Введите измененную строку")
+                m = input().split(' ', 3)
+                e1 = m[0]
+                e2 = m[1]
+                e3 = m[2].split(':')
+                e4 = e3[0]
+                e5 = e3[1]
+                r[k].punkt = e1
+                r[k].pometka = e2
+                r[k].vremya[0] = e4
+                r[k].vremya[1] = e5
+                d1 = r[k].vremya[0]
+                d2 = r[k].vremya[1]
+                if str(d2) == '0':
+                    print(r[i].punkt, r[i].pometka, str(d1) + ':' + str(d2) + '0')
+                else:
+                    print(r[i].punkt, r[i].pometka, str(d1) + ':' + str(d2))
+
+
 
 
 
